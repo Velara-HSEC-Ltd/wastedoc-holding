@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0F172A" />
+  <title>WasteDoc — Digital Waste Tracking</title>
+  <meta name="description" content="WasteDoc logs incoming loads on receipt in a few keystrokes and submits them to Digital Waste Tracking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" />
+  <style>
+    :root {
+      --color-primary: #2DD4BF;
+      --color-on-primary: #0F172A;
+      --color-bg: #0F172A;
+      --color-card: #1E293B;
+      --color-text: #F1F5F9;
+      --color-text-secondary: #94A3B8;
+      --color-border: #334155;
+
+      --text-page-title: 1.375rem;
+      --text-body: 1rem;
+      --text-caption: 0.875rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header — mirrors AppHeader.tsx */
+    header {
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .header-inner {
+      max-width: 42rem;              /* max-w-2xl */
+      margin: 0 auto;
+      padding: 1rem 2rem;            /* py-4 px-8 */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .wordmark {
+      font-size: 1.5rem;             /* text-2xl */
+      line-height: 2rem;
+      letter-spacing: -0.025em;      /* tracking-tight */
+      font-weight: 700;
+      color: var(--color-primary);
+      white-space: nowrap;
+    }
+
+    .assoc {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;                   /* gap-2 */
+    }
+
+    .assoc span {
+      font-size: 0.75rem;            /* text-xs */
+      line-height: 1rem;
+      letter-spacing: -0.025em;
+      color: var(--color-text-secondary);
+      text-align: right;
+    }
+
+    .assoc img {
+      height: 4rem;                  /* h-16 */
+      width: auto;
+    }
+
+    /* Main — centred panel, footer pinned on short pages */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;            /* px-4, breathing room on short viewports */
+    }
+
+    .panel {
+      width: 100%;
+      max-width: 24rem;              /* max-w-sm, as the login card */
+      border: 1px solid var(--color-border);
+      border-radius: 0.75rem;        /* rounded-xl */
+      padding: 1.5rem;               /* p-6 */
+    }
+
+    .panel h1 {
+      font-size: var(--text-page-title);
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+    }
+
+    .lede {
+      font-size: var(--text-body);
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 0.5rem;         /* rounded-lg */
+      padding: 0.625rem 1rem;        /* py-2.5 px-4 */
+      font-size: var(--text-body);
+      font-weight: 500;
+      background: var(--color-primary);
+      color: var(--color-on-primary);
+      transition: opacity 150ms;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-primary:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.5);
+    }
+
+    .listed {
+      margin-top: 1rem;
+      font-size: var(--text-caption);
+      color: var(--color-text-secondary);
+    }
+
+    .listed a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    footer {
+      border-top: 1px solid var(--color-border);
+      padding: 1rem;
+      text-align: center;
+      font-size: var(--text-caption);
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <span class="wordmark">WasteDoc</span>
+      <div class="assoc">
+        <span>in association with</span>
+        <img src="albion.png" alt="Albion Environmental" width="174" height="72" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="panel">
+      <h1>Digital Waste Tracking</h1>
+      <p class="lede">WasteDoc logs incoming loads on receipt in a few keystrokes and submits them to Digital Waste Tracking. A new site is on its way.</p>
+      <a class="btn-primary" href="https://receipt.wastedoc.co.uk">Sign in to WasteDoc</a>
+      <p class="listed">WasteDoc has successfully integrated with Digital Waste Tracking and appears on the <a href="https://www.gov.uk/government/publications/report-receipt-of-waste-choose-a-software-provider/report-receipt-of-waste-choose-a-software-provider">gov.uk software provider list</a>.</p>
+    </div>
+  </main>
+
+  <footer>Velara HSEC Ltd 2026</footer>
+</body>
+</html>
